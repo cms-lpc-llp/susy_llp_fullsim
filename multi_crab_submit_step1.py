@@ -44,7 +44,8 @@ if __name__ == '__main__':
     ev = 100000
     mchi_list = [200]
     pl_list = [1000]
-    mode_list = ["x1n2-n1-wlv-hbb"]
+    mode_list = ["n3n2-n1-zll-hbb"]
+    #mode_list = ["x1n2-n1-wlv-hbb"]
     for i in range(len(mode_list)):
 	mode = mode_list[i]
 	for mchi in mchi_list:
