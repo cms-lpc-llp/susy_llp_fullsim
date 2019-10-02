@@ -20,7 +20,7 @@ if __name__ == '__main__':
     config.section_("Data")
     config.Data.inputDBS = 'global'
     config.Data.splitting = 'EventBased'
-    config.Data.unitsPerJob = 1000
+    config.Data.unitsPerJob = 500
     config.Data.totalUnits = 100000
     config.Data.publication = True
 
@@ -42,8 +42,11 @@ if __name__ == '__main__':
     #############################################################################################
     ev = 100000 #100k events
     mchi_list = [200]
+    #pl_list = [100]
     pl_list = [1000]
-    mode_list = ["x1n2-n1-wlv-hbb"]
+    mode_list = ["n3n2-n1-hbb-hbb"]
+    #mode_list = ["n3n2-n1-zll-hbb"]
+    #mode_list = ["x1n2-n1-wlv-hbb"]
     pset_dir = "/afs/cern.ch/user/j/jmao/work/public/releases/cms-llp/CMSSW_9_4_12/src/"
     for i in range(len(mode_list)):
 	mode = mode_list[i]
@@ -56,7 +59,10 @@ if __name__ == '__main__':
 		config.Data.outLFNDirBase = '/store/group/phys_exotica/jmao/aodsim/RunIIFall17/GENSIM/MSSM-1d-prod/'
 		if "x1n2" in mode:
 			config.Data.outLFNDirBase = '/store/group/phys_exotica/jmao/aodsim/RunIIFall17/GENSIM/MSSM-2d-prod/'
-		config.JobType.psetName = pset_dir +"SUS-RunIIFall17wmLHEGS-00161_1_cfg.py"
+		#config.JobType.psetName = pset_dir +"SUS-RunIIFall17wmLHEGS-00161_1_cfg.py"
+		#config.JobType.psetName = pset_dir + "TChiHZ_fullsim_RunIIFall17wmLHEGS_1_cfg.py"
+		#config.JobType.psetName = pset_dir + "TChiHZ_fullsim_RunIIFall17wmLHEGS_1_cfg_ctau10cm.py"
+		config.JobType.psetName = pset_dir + "TChiHH_fullsim_RunIIFall17wmLHEGS_1_cfg.py"
 		config.JobType.numCores = 8
 		print 'config %s' %(config.JobType.psetName)
 		print 'output %s' %(config.Data.outLFNDirBase)
