@@ -34,3 +34,7 @@ cmsDriver.py step1 --fileout file:SUS-RunIIFall17DRPremix-00183_step1.root  --pi
 ```
 cmsDriver.py step2 --filein file:SUS-RunIIFall17DRPremix-00183_step1.root --fileout file:SUS-RunIIFall17DRPremix-00183.root --mc --eventcontent AODSIM --runUnscheduled --datatier AODSIM --conditions 94X_mc2017_realistic_v17 --step RAW2DIGI,RECO,RECOSIM,EI --nThreads 8 --era Run2_2017 --python_filename SUS-RunIIFall17DRPremix-00183_2_cfg.py --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
 ```
+#Step 2: AODSIM --> MINIAODSIM
+```
+cmsDriver.py step3 --filein file:SUS-RunIIFall17DRPremix-00183.root --fileout file:SUS-RunIIFall17DRPremix-00183_MINIAOD.root --mc --eventcontent MINIAODSIM --runUnscheduled --datatier MINIAODSIM --conditions 94X_mc2017_realistic_v17 --step PAT --nThreads 8 --era Run2_2017 --python_filename step3_cfg.py  --no_exec --customise Configuration/DataProcessing/Utils.addMonitoring -n 10
+```
